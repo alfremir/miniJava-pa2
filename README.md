@@ -1,6 +1,6 @@
 COMP 520: Compilers
 ===================
-PA2 for COMP520 - Compilers
+PA2 - Abstract Syntax Trees
 ===========================
 
 The second milestone in the compiler project is to create an abstract syntax 
@@ -20,3 +20,9 @@ applied to a variable to predecrement or postdecrement the value of a
 variable referenced in an expression, respectively. Since we will not 
 implement this operator in miniJava, any expression involving `--` should 
 be disallowed in miniJava. Here are some examples.
+
+Valid miniJava expressions:
+`-b    -(-b)    - -b     a-(-b) !b !!b`
+
+Invalid miniJava
+`--b a - --b`
