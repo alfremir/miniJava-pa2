@@ -45,14 +45,15 @@ by standard operator precedence rules from arithmetic and predicate logic. The
 following table lists the precedence order of the miniJava operators from 
 lowest to highest.
 
-    class          operator(s)
-    disjunction    ||
-    conjunction    &&
-    equality       ==, !=
-    relational     <=, <, >, >=
-    additive       +, -
-    multiplicative *, /
-    unary          -, !
+    class            operator(s)
+    -----------------------------
+    disjunction    | ||
+    conjunction    | &&
+    equality       | ==, !=
+    relational     | <=, <, >, >=
+    additive       | +, -
+    multiplicative | *, /
+    unary          | -, !
 
 Binary operators are left associative, so that `1-2+3` means `(1-2)+3`, and 
 `1+3*4/2` means `1+((3*4)/2)`. Unary operators are right associative. The 
