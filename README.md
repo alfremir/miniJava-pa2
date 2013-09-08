@@ -21,7 +21,7 @@ variable referenced in an expression, respectively. Since we will not
 implement this operator in miniJava, any expression involving `--` should 
 be disallowed in miniJava. Here are some examples.
 
-Valid miniJava expressions:
+*Valid* miniJava expressions:
 
     -b    
     -(-b)    
@@ -30,7 +30,7 @@ Valid miniJava expressions:
     !b 
     !!b
 
-Invalid miniJava
+*Invalid* miniJava
 
     --b 
     a - --b
@@ -65,14 +65,14 @@ Abstract syntax tree classes
 ----------------------------
 
 The set of classes needed to build miniJava ASTs are provided in the 
-`AbstractSyntaxTrees` package. Components of the AST "grammar" are organizsed 
+`AbstractSyntaxTrees` package. Components of the AST "grammar" are organized 
 by the class hierarchy shown at the end. Abstract classes (shown with an "A" 
 superscript next to the class icon) represent nonterminals of the AST grammar, 
-such as `Statement`. The rule for `Statement` below shows the particular kinds 
+such as *Statement*. The rule for *Statement* below shows the particular kinds 
 of statements that may be created in an AST; each corresponds to a concrete 
 class in the hierarchy. For example, a `WhileStmt` is a specific kind of 
-`Statement`, and consists of an `Expression` (for the condition controlling 
-execution of the loop) and a `Statement` (for the body of the loop).
+*Statement*, and consists of an *Expression* (for the condition controlling 
+execution of the loop) and a *Statement* (for the body of the loop).
 
     Statement ::=
                 Reference Expression
@@ -146,3 +146,41 @@ You may output any additional information you wish from your compiler.
 For valid miniJava programs the testing will check that you return exit code 0 
 and that the AST you display matches the expected AST, and for invalid 
 programs it will check that you return exit code 4.
+
+    AST
+        Declaration
+            ClassDecl
+            LocalDecl
+                ParameterDecl
+                VarDecl
+            MemberDecl
+                FieldDecl
+                MethodDecl
+        Expression
+            BinaryExpr
+            CallExpr
+            LiteralExpr
+            NewExpr
+            RefExpr
+            UnaryExpr
+        Package
+        Reference
+            IndexedRef
+            QualifiedRef
+        Statement
+            AssignStmt
+            BlockStmt
+            CallStmt
+            IfStmt
+            VarDeclStmt
+            WhileStmt
+        Terminal
+            Identifier
+            Literal
+                BooleanLiteral
+                IntLiteral
+            Operator
+        Type
+            ArrayType
+            BaseType
+            ClassType
